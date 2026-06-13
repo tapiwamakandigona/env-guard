@@ -26,6 +26,7 @@ const env = guard({
   NODE_ENV: { oneOf: ["development", "production"] },  // enum
   API_KEY: { pattern: /^sk_/ },                    // regex validation
   LOG_LEVEL: { required: false },                  // optional
+  HOST: { description: "Server hostname" },        // descriptive error
 });
 
 // env.DATABASE_URL is guaranteed to exist
@@ -57,6 +58,7 @@ guard(schema: Record<string, Rule | boolean>): Record<string, string>
 | `pattern` | `RegExp` | - | Regex the value must match |
 | `oneOf` | `string[]` | - | Whitelist of allowed values |
 | `transform` | `(v: string) => string` | - | Transform before returning |
+| `description` | `string` | - | Human-readable label shown in error messages |
 
 ### Shorthand
 
