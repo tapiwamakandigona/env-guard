@@ -1,2 +1,20 @@
 node_modules/
 dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Coverage
+coverage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
